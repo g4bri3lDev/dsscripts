@@ -1,7 +1,4 @@
 import React from "react";
-const styles = {
-
-};
 export default function Footer() {
     return (
         <div style={{ marginTop: "auto", display: "flex", justifyContent: "center" }}>
