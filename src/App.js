@@ -3,6 +3,7 @@ import EEA from "./components/EEA";
 import Phi from "./components/Phi";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import OrdFinder from "./components/OrdFinder";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <div className="content" style={{ display: "flex", flexWrap: "wrap" }}>
                 <EEA />
                 <Phi />
+                <OrdFinder/>
             </div>
             <Footer />
         </div>
