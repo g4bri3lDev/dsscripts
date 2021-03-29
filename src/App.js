@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
+import EEA from "./components/EEA";
+import './app.css'
+import Phi from "./components/Phi";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <EEA/>
+            <Phi/>
+            <p>Bei Fehlerfunden und Verbesserungsvorschlägen: <a href="mailto:bugs@g4bri3l.de">bugs@g4bri3l.de</a> </p>
+        </div>
+    );
 }
 
 export default App;
