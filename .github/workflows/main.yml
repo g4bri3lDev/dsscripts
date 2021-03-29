@@ -28,3 +28,15 @@ jobs:
         uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: build
+      - name: FTP Deployment
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_dir: "./build"
+          delete: true
+        
+        
+        
+        
