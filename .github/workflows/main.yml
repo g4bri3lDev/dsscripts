@@ -22,8 +22,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
+      - name: Run Yarn
+        uses: Borales/actions-yarn@v2.3.0
       - name: Run Yarn build
         uses: Borales/actions-yarn@v2.3.0
         with:
