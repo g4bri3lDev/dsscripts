@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {eea, ggt} from "../functions/eea";
-import Card from "./Card";
-import {inputStyle} from "../styles";
+import {eea, ggt} from "../../functions/algebra/eea";
+import Card from "../Card";
+import {inputStyle} from "../../styles";
 
 export default function EEA(props) {
     const [table, setTable] = useState(null)

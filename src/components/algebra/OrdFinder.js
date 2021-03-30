@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import {ord} from "../functions/findOrd";
-import Card from "./Card";
-import {inputStyle} from "../styles";
+import {ord} from "../../functions/algebra/findOrd";
+import Card from "../Card";
+import {inputStyle} from "../../styles";
 
 export default function OrdFinder(props) {
     const [result, setResult] = useState(null)

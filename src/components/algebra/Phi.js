@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import {calcPrimes, printPhiFormula} from "../functions/phi";
-import Card from "./Card";
-import {inputStyle} from "../styles";
+import {calcPrimes, printPhiFormula} from "../../functions/algebra/phi";
+import Card from "../Card";
+import {inputStyle} from "../../styles";
 
 export default function Phi(props) {
     const [num, setNum] = useState()
