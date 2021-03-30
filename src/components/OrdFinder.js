@@ -19,7 +19,7 @@ export default function OrdFinder(props) {
             <button onClick={() => setResult(ord(n, a, p))}
                     disabled={a === "0" || n === "0" || p === '0' || a === '' || a === "" || n === ""}>Calculate
             </button>
-            <ul>
+            <ul style={{textAlign: "left"}}>
                 {result != null ? result.dividers.map((value, index) =>
                     <li>{a}^{value} mod {n} = {result.ord[index]}</li>
                 ) : null}
