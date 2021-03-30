@@ -68,10 +68,10 @@ export default function GaleShapley(props) {
 				</thead>
 				<tbody>
 					{table != null ? table.map((row, rowid) =>
-						<tr key={rowid}>
+						<tr>
 							<td>{rowid+1}</td>
 							{row.map((gender, genderid) => gender.map((col,colid) =>
-								<td key={rowid+""+genderid+""+colid}><input size="2" value={col} min="1" max={n} onChange={event => setCell(rowid,genderid,colid,event.target.value)} type="number" style={inputStyle}/></td>
+								<td><input size="2" value={col} min="1" max={n} onChange={event => setCell(rowid,genderid,colid,event.target.value)} type="number" style={inputStyle}/></td>
 							))}
 						</tr>
 					) : null}
@@ -95,15 +95,15 @@ export default function GaleShapley(props) {
 					<tr>
 						<td></td>
 						<td></td>
-						{[...Array(n)].map((_,i) => <td key={"a"+i}>{getAPrefix()}{i+1}</td>)}
-						{[...Array(n)].map((_,i) => <td key={"b"+i}>{getBPrefix()}{i+1}</td>)}
+						{[...Array(n)].map((_,i) => <td>{getAPrefix()}{i+1}</td>)}
+						{[...Array(n)].map((_,i) => <td>{getBPrefix()}{i+1}</td>)}
 					</tr>
 				</thead>
 				<tbody>
 					{result != null ? result.map((row, rowid) =>
-						<tr key={rowid}>
+						<tr>
 							<td>{rowid+1}</td>
-							<td>{getAPrefix()}{row[0][0]+1} ➡ {getBPrefix()}{row[0][1]+1} <span style={{"font-size":"7pt"}}>{symbols[row[0][2]]}</span></td>
+							<td>{getAPrefix()}{row[0][0]+1} ➡ {getBPrefix()}{row[0][1]+1} <span style={{"fontSize":"7pt"}}>{symbols[row[0][2]]}</span></td>
 							{row[1].map((val) => 
 								<td>{val >= 0 ? getBPrefix()+(val+1) : ""}</td>
 							)}
@@ -122,7 +122,7 @@ export default function GaleShapley(props) {
 				<li>{a+1} → {b+1}</li>
 			) : null}
 			</ul>
-			<p style={{"font-size":"7pt"}}>
+			<p style={{"fontSize":"7pt"}}>
 			Symbole:<br/>
 			{symbols[0]} Verlobung<br/>
 			{symbols[1]} Korb<br/>
