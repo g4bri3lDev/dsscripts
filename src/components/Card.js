@@ -8,6 +8,7 @@ const style = {
 }
 export default function Card(props) {
     return <div style={style}>
+        <h1>{props.title}</h1>
         {props.children}
     </div>
 }

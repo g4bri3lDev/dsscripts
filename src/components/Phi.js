@@ -3,12 +3,11 @@ import {calcPrimes, printPhiFormula} from "../functions/phi";
 import Card from "./Card";
 import {inputStyle} from "../styles";
 
-export default function Phi() {
+export default function Phi(props) {
     const [num, setNum] = useState()
     const [primes, setPrimes] = useState([])
     return (
-        <Card>
-            <h1>Eulerische Phi Funktion:</h1>
+        <Card title={props.title}>
             <input value={num} type="number" onChange={(event => {
                 setNum(event.target.value);
                 setPrimes(calcPrimes(event.target.value))

@@ -3,13 +3,12 @@ import {eea, ggt} from "../functions/eea";
 import Card from "./Card";
 import {inputStyle} from "../styles";
 
-export default function EEA() {
+export default function EEA(props) {
     const [table, setTable] = useState(null)
     const [a, setA] = useState("")
     const [b, setB] = useState("")
     return (
-        <Card>
-            <h1>EEA:</h1>
+        <Card title={props.title}>
             <input value={a} onChange={event => setA(event.target.value)} type="number" style={inputStyle}/>
             <input value={b} onChange={event => setB(event.target.value)} type="number" style={inputStyle}/>
             <br/>

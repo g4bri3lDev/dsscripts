@@ -7,14 +7,15 @@ import OrdFinder from "./components/OrdFinder";
 
 function App() {
     return (
-        <div className="App" style={{ display: "flex", flexDirection: "column", height: "100vh", margin: "0 1rem 0 1rem" }}>
-            <Header />
-            <div className="content" style={{ display: "flex", flexWrap: "wrap" }}>
-                <EEA />
-                <Phi />
-                <OrdFinder/>
+        <div className="App"
+             style={{display: "flex", flexDirection: "column", height: "100vh", margin: "0 1rem 0 1rem"}}>
+            <Header/>
+            <div className="content" style={{display: "flex", flexWrap: "wrap"}}>
+                <EEA title="EEA:"/>
+                <Phi title="Eulerische Phi Funktion:"/>
+                <OrdFinder title="Ordnung finden:"/>
             </div>
-            <Footer />
+            <Footer/>
         </div>
     );
 }
