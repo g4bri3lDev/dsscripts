@@ -18,11 +18,13 @@ export default function EEA() {
             </button>
             <table style={{marginLeft: "auto", marginRight: "auto", marginTop: "15px"}}>
                 <thead>
-                <th>a</th>
-                <th>b</th>
-                <th>b mod a</th>
-                <th>α</th>
-                <th>β</th>
+                <tr>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>b mod a</th>
+                    <th>α</th>
+                    <th>β</th>
+                </tr>
                 </thead>
                 <tbody>
                 {table != null ? table.map((row) =>
