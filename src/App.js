@@ -4,6 +4,7 @@ import Phi from "./components/Phi";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import OrdFinder from "./components/OrdFinder";
+import GaleShapley from "./components/GaleShapley";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <EEA />
                 <Phi />
                 <OrdFinder/>
+                <GaleShapley/>
             </div>
             <Footer />
         </div>
