@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import {gsRun} from "../functions/galeShapley";
-import Card from "./Card";
-import {inputStyle} from "../styles";
+import {gsRun} from "../../functions/algebra/galeShapley";
+import Card from "../Card";
+import {inputStyle} from "../../styles";
 
 // frag nicht... ich versteh es selbst nicht ganz
-export default function GaleShapley() {
+export default function GaleShapley(props) {
 	const [table, setTable] = useState([[[1,3,4,2],[3,4,2,1]],[[4,1,3,2],[2,1,3,4]],[[4,3,1,2],[3,1,2,4]],[[3,4,1,2],[4,3,2,1]]])
 	const [result, setResult] = useState(null)
 	const [n, setN] = useState(4)
@@ -49,8 +49,7 @@ export default function GaleShapley() {
 	}
 	
 	return (
-		<Card>
-			<h1>Gale-Shapley 💍:</h1>
+		<Card title={props.title}>
 			<p>
 				Matche
 				<input size="2" value={n} min="1" onChange={event => createTable(event.target.value)} type="number" placeholder="n" style={inputStyle}/>
