@@ -1,7 +1,8 @@
 import React, {useState} from "react";
+import '../app.css'
 
 const style = {
-    boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
+    boxShadow: "0 4px 8px 0 rgba(0,0,0,1)",
     margin: "5px",
     padding: "16px",
     textAlign: "center",
@@ -10,7 +11,7 @@ const style = {
 export default function Card(props) {
     const [collapsed, setCollapsed] = useState(!props.isCategory)
     return (
-        <div style={{...props.style, ...style}}>
+        <div className="Card" style={{...props.style, ...style}}>
             <h1 onClick={() => props.isCategory ? setCollapsed(prev => !prev) : null}>{props.title}{props.isCategory ? collapsed ? " -" : " +" : null}</h1>
             {collapsed ?
                 <div style={props.style}>
