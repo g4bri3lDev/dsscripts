@@ -16,6 +16,7 @@ export default function OrdFinder(props) {
                    style={inputStyle}/>
             <input value={p} onChange={event => setP(event.target.value)} type="number" placeholder="p"
                    style={inputStyle}/>
+            <br/>
             <button onClick={() => setResult(ord(n, a, p))}
                     disabled={a === "0" || n === "0" || p === '0' || a === '' || a === "" || n === ""}>Calculate
             </button>
