@@ -2,7 +2,6 @@ import React from "react";
 import EEA from "./EEA";
 import Phi from "./Phi";
 import OrdFinder from "./OrdFinder";
-import GaleShapley from "../graphs/GaleShapley";
 import Topic from "../Topic";
 
 export default function Algebra() {
