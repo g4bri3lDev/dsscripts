@@ -11,7 +11,7 @@ export default function Card(props) {
     const [collapsed, setCollapsed] = useState(!props.isCategory)
     return (
         <div style={{...props.style, ...style}}>
-            <h1 onClick={() => props.isCategory ? setCollapsed(prev => !prev) : null}>{props.isCategory ? collapsed ? "↓ " : "→ " : null}{props.title}</h1>
+            <h1 onClick={() => props.isCategory ? setCollapsed(prev => !prev) : null}>{props.title}{props.isCategory ? collapsed ? " -" : " +" : null}</h1>
             {collapsed ?
                 <div style={props.style}>
                     {props.children}

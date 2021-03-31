@@ -13,6 +13,7 @@ export default function PNK(props) {
                    style={inputStyle}/>
             <input value={k} onChange={event => setK(event.target.value)} type="number" placeholder="k"
                    style={inputStyle}/>
+            <br/>
             <button onClick={() => setResult(calcPnk(n, k))}>Calculate
             </button><br/>
             {result}
