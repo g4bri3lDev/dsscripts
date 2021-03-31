@@ -1,3 +1,4 @@
+[![CI](https://github.com/g4bri3lDev/dsscripts/actions/workflows/main.yml/badge.svg)](https://github.com/g4bri3lDev/dsscripts/actions/workflows/main.yml)
 # DS Skripte
 ## Available Scripts
 
