@@ -8,7 +8,7 @@ import Graphs from "./components/graphs";
 function App() {
     return (
         <div className="App"
-             style={{display: "flex", flexDirection: "column", height: "100vh", margin: "0 1rem 0 1rem"}}>
+             style={{display: "flex", flexDirection: "column", height: "100vh"}}>
             <Header/>
             <Algebra/>
             <Graphs/>

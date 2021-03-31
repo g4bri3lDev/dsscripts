@@ -1,5 +1,48 @@
+.App {
+    --primaryBackgroundColor: #121212;
+    --secondaryBacgroundColor: #262626;
+    --tertiaryBackgroundColor: #2d2d2d;
+    --primaryTextColor: #d8d4cf;
+    background-color: var(--primaryBackgroundColor);
+    color: var(--primaryTextColor);
+}
+
+@media (prefers-color-scheme: light) {
+    .App {
+        --primaryBackgroundColor: #f6f6f6;
+        --secondaryBacgroundColor: #f6f6f6;
+        --tertiaryBackgroundColor: #f6f6f6;
+        --primaryTextColor: black;
+    }
+}
+
+.Card {
+    background-color: var(--secondaryBacgroundColor);
+}
+
+.Topic {
+    background-color: var(--tertiaryBackgroundColor);
+}
+
+input {
+    background-color: var(--tertiaryBackgroundColor);
+    color: var(--primaryTextColor);
+    border: 1px solid var(--primaryTextColor);
+}
+
+button {
+    text-decoration: none;
+    background-color: var(--primaryBackgroundColor);
+    border: 1px solid var(--primaryTextColor);
+    color: var(--primaryTextColor);
+}
+
+a {
+    color: var(--primaryTextColor);
+}
+
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid var(--primaryTextColor);
     border-collapse: collapse;
     padding: 10px;
     text-align: center;
