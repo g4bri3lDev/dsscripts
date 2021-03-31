@@ -1,9 +1,10 @@
+import {calcPhi} from "./phi";
 const bigInt = require("big-integer")
 //wers besser kann solls besser machen
-export function ord(n, a, p) {
+export function ord(n, a) {
     n = parseInt(n)
     a = parseInt(a)
-    p = parseInt(p)
+    let p = calcPhi(n)
 
     let dividers = []
     if (p === 1) {
