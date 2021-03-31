@@ -5,13 +5,13 @@ import {inputStyle} from "../../styles";
 
 // frag nicht... ich versteh es selbst nicht ganz
 export default function GaleShapley(props) {
-    const [table, setTable] = useState([[[1,3,4,2],[3,4,2,1]],[[4,1,3,2],[2,1,3,4]],[[4,3,1,2],[3,1,2,4]],[[3,4,1,2],[4,3,2,1]]])
-    const [result, setResult] = useState(null)
-    const [n, setN] = useState(4)
-    const [a, setA] = useState("Männer")
-    const [b, setB] = useState("Frauen")
-    const [prefix, setPrefix] = useState(false)
-    const symbols = ["💍", "🧺", "💔"]
+    const [table, setTable] = useState([[[1,3,4,2],[3,4,2,1]],[[4,1,3,2],[2,1,3,4]],[[4,3,1,2],[3,1,2,4]],[[3,4,1,2],[4,3,2,1]]]);
+    const [result, setResult] = useState(null);
+    const [n, setN] = useState(4);
+    const [a, setA] = useState("Männer");
+    const [b, setB] = useState("Frauen");
+    const [prefix, setPrefix] = useState(false);
+    const symbols = ["💍", "🧺", "💔"];
 
     // TODO: better defaults?
     const getDefault = (n) => {
@@ -29,6 +29,33 @@ export default function GaleShapley(props) {
         return newTable;
     }
 
+    const swapSides = () => {
+		let newTable = [];
+		for(let i=0; i<n; i++) {
+            let row = [];
+            row[0] = table[i][1];
+            row[1] = table[i][0];
+            newTable[i] = row;
+        }
+        setTable(newTable);
+    }
+
+    const calculate = () => {
+    	let test = 0;
+    	for(let i=1; i<=n; i++) {
+    		test += i;
+    	}
+		for(let i=0; i<n; i++) {
+			if(table[i][0].reduce((a,b) => a+b, 0) !== test || table[i][1].reduce((a,b) => a+b, 0) !== test){
+				console.warn("Mistake in input detected!");
+				alert("Mistake in input detected!");
+				return;
+			}
+		}
+    	let r = gsRun(JSON.parse(JSON.stringify(table)), n);
+    	if(r != null) setResult(r);
+    }
+
     const getAPrefix = () => {
         return prefix ? a.charAt(0) : "";
     }
@@ -44,8 +71,8 @@ export default function GaleShapley(props) {
     const setCell = (row,gen,col,val) => {
         // dirty way to create deep copy
         let newTable = JSON.parse(JSON.stringify(table));
-        newTable[row][gen][col] = parseInt(val)
-        setTable(newTable)
+        newTable[row][gen][col] = parseInt(val);
+        setTable(newTable);
     }
 
     return (
@@ -78,11 +105,9 @@ export default function GaleShapley(props) {
                 </tbody>
             </table>
             <p>
-                <button onClick={event => setPrefix(!prefix)}>Toggle Prefix</button>&nbsp;
-                <button onClick={() => {
-                    let r = gsRun(JSON.parse(JSON.stringify(table)), n);
-                    if(r != null) setResult(r);
-                }}>Calculate</button>
+                <button onClick={() => setPrefix(!prefix)}>Toggle Prefix</button>&nbsp;
+				<button onClick={() => swapSides()}>Swap Sides</button>&nbsp;
+                <button onClick={() => calculate()}>Calculate</button>
             </p>
             <table>
                 <thead>
@@ -95,8 +120,8 @@ export default function GaleShapley(props) {
                 <tr>
                     <td></td>
                     <td></td>
-                    {[...Array(n)].map((_,i) => <td>{getAPrefix()}{i+1}</td>)}
-                    {[...Array(n)].map((_,i) => <td>{getBPrefix()}{i+1}</td>)}
+                    {table.map((_,i) => <td>{getAPrefix()}{i+1}</td>)}
+                    {table.map((_,i) => <td>{getBPrefix()}{i+1}</td>)}
                 </tr>
                 </thead>
                 <tbody>
@@ -119,7 +144,7 @@ export default function GaleShapley(props) {
             </p>
             <ul>
                 {result != null ? result[result.length-1][1].map((b, a) =>
-                    <li>{a+1} → {b+1}</li>
+                    <li>{getAPrefix()+(a+1)} → {getBPrefix()+(b+1)}</li>
                 ) : null}
             </ul>
             <p style={{"fontSize":"7pt"}}>
