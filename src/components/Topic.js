@@ -8,6 +8,6 @@ export default function Topic({children, title}) {
             flexDirection: "row",
             flexWrap: "wrap",
             justifyContent: "center"
-        }}>{children}</Card>
+        }} isCategory>{children}</Card>
     )
 }

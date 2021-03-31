@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 const style = {
     boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
@@ -8,12 +8,15 @@ const style = {
     flexDirection: "column"
 }
 export default function Card(props) {
+    const [collapsed, setCollapsed] = useState(!props.isCategory)
     return (
         <div style={{...props.style, ...style}}>
-            <h1>{props.title}</h1>
-            <div style={props.style}>
-                {props.children}
-            </div>
+            <h1 onClick={() => (setCollapsed(prev => !prev))}>{props.title}</h1>
+            {collapsed ?
+                <div style={props.style}>
+                    {props.children}
+                </div>
+                : null}
 
         </div>
     )
