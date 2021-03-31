@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {gsRun} from "../../functions/algebra/galeShapley";
+import {gsRun} from "../../functions/graphs/galeShapley";
 import Card from "../Card";
 import {inputStyle} from "../../styles";
 
