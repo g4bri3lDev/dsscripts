@@ -1,21 +1,27 @@
 [![CI](https://github.com/g4bri3lDev/dsscripts/actions/workflows/main.yml/badge.svg)](https://github.com/g4bri3lDev/dsscripts/actions/workflows/main.yml)
 # DS Skripte
-## Available Scripts
 
-In the project directory, you can run:
+Collaboration of random students working on calculators or algorythms for a math project.
+Main cause is to learn JavaScript and have fun doing some stuff.
+If you find any errors or got some improvement tipps pls notify "g4bri3lDev".
 
-### `yarn start`
+We want to bring in as many calculators as possible into this.
+If you have any suggestions on what is missing or what could be implemented you can always start a new issue.
+Either you hope we aren't to stupid to implement it or you fork it, implement it and become one of the random students working on it.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### How to start
+- Start and test the app with `yarn start` or `npm start`
+- You can view it in your Browser (http://localhost:3000)
+- The page will reload if you make edits.\
+- You will also see any lint errors in the console.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Status
+- Algebra (EEA, Eulerische Phi Funktion, Ordnung finden)
+- Graphen (Gale-Shapley)
+- Kombinatorik (Pn,k Rechner)
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### In Progress
+- More features for "Graphen"
+- Testing everything
+- Dark Mode
+- Localisation
