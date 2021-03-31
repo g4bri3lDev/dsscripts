@@ -30,10 +30,10 @@ export function gsRun(input, n) {
 				}
 			}
 		}
-		console.log("man: "+man+" woman: "+woman)
+		//console.log("man: "+man+" woman: "+woman)
 		// no woman left to propose to
 		if(woman < 0){
-			console.log(result);
+			//console.log(result);
 			return result.slice(1,result.length);
 		}
 		else {
