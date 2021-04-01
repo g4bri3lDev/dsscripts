@@ -6,8 +6,8 @@ import DropDown from "../DropDown";
 import {inputStyle} from "../../styles";
 
 export default function AllInOne(props) {
-	const [n, setN] = useState("");
-	const [k, setK] = useState("");
+	const [n, setN] = useState();
+	const [k, setK] = useState();
 	const [kugelnUnterscheidbar, setKugelnUnterscheidbar] = useState(false);
 	const [urnenUnterscheidbar, setUrnenUnterscheidbar] = useState(false);
 	const [bedingung, setBedingung] = useState("beliebig");

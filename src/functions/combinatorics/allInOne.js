@@ -66,11 +66,11 @@ export function fact(n) {
 }
 
 function isEmpty(value) {
-	return (value === null || value === undefined || value === NaN || value === "");
+	return (value === null || value === undefined || value === "");
 }
 
 export function allInOne(n, k, kugelnUnterscheidbar, urnenUnterscheidbar, bedingung) {
-	if(isEmpty(n) || isEmpty(k) || isEmpty(kugelnUnterscheidbar) || isEmpty(urnenUnterscheidbar) || isEmpty(bedingung)) return NaN;
+	if(isNaN(n) || isNaN(k) || isEmpty(kugelnUnterscheidbar) || isEmpty(urnenUnterscheidbar) || isEmpty(bedingung)) return NaN;
 	switch(bedingung){
 		case "beliebig":
 			if(urnenUnterscheidbar) {
