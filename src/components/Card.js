@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import '../app.css'
 
 const style = {
@@ -12,7 +12,8 @@ export default function Card(props) {
     const [collapsed, setCollapsed] = useState(!props.isCategory)
     return (
         <div className="Card" style={{ ...props.style, ...style }}>
-            <h1 onClick={() => props.isCategory ? setCollapsed(prev => !prev) : null}>{props.title}{props.isCategory ? collapsed ? " -" : " +" : null}</h1>
+            <h1 style={{userSelect: "none"}}
+                onClick={() => props.isCategory ? setCollapsed(prev => !prev) : null}>{props.title}{props.isCategory ? collapsed ? " -" : " +" : null}</h1>
             {collapsed ?
                 <div style={props.style}>
                     {props.children}

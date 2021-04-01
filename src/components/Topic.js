@@ -10,7 +10,6 @@ export default function Topic({ children, title }) {
             flexDirection: "row",
             flexWrap: "wrap",
             justifyContent: "center",
-            userSelect: "none"
         }} isCategory > { children}</Card >
     )
 }
