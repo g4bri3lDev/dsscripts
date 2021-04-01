@@ -65,7 +65,12 @@ export function fact(n) {
 	return f;
 }
 
+function isEmpty(value) {
+	return (value === null || value === undefined || value === NaN || value === "");
+}
+
 export function allInOne(n, k, kugelnUnterscheidbar, urnenUnterscheidbar, bedingung) {
+	if(isEmpty(n) || isEmpty(k) || isEmpty(kugelnUnterscheidbar) || isEmpty(urnenUnterscheidbar) || isEmpty(bedingung)) return NaN;
 	switch(bedingung){
 		case "beliebig":
 			if(urnenUnterscheidbar) {
