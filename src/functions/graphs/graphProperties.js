@@ -25,7 +25,6 @@ function havelHakimi(sequenceArray, result) {
         return result
     }
     if (!isAlreadySorted(sequenceArray)) {
-        console.log(sequenceArray + " not sorted yet")
         result.steps.push(convertToSequence(sequenceArray) + " -sortiert-> " + convertToSequence(sequenceArray.sort((a, b) => a - b)))
         sequenceArray = sequenceArray.sort((a, b) => a - b)
     }
