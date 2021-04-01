@@ -8,9 +8,9 @@ export default function GoldenListHead(props) {
     const [n, setN] = useState("")
     return (
         <Card title={props.title}>
-            <input value={n} onChange={event => setN(event.target.value)} type="number" placeholder="n"
+            <input value={n} min="0" onChange={event => setN(event.target.value)} type="number" placeholder="n"
                    style={inputStyle}/>
-            <input value={k} onChange={event => setK(event.target.value)} type="number" placeholder="k"
+            <input value={k} min="0" onChange={event => setK(event.target.value)} type="number" placeholder="k"
                    style={inputStyle}/>
             <br/>
             <button onClick={() => setResult(props.function(parseInt(n), parseInt(k)))}>Calculate
