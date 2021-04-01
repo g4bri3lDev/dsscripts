@@ -51,3 +51,19 @@ export function canBeRealized(sequence) {
     }
     return havelHakimi(convertToArray(sequence), result)
 }
+
+export function handshakingLemma(sequence) {
+    let result = {
+        vertices: 0,
+        edges: 0,
+        steps: []
+
+    }
+    const sequenceArray = convertToArray(sequence)
+    result.vertices = sequenceArray.length
+    result.edges = sequenceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0) / 2
+    result.steps.push("|V| = " + result.vertices)
+    result.steps.push("Σv∈V deg(v) = 2 |E|")
+    result.steps.push("|E| = (" + sequence.replaceAll(",", " + ") + ") / 2 = " + result.edges)
+    return result
+}
