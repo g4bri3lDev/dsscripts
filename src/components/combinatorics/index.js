@@ -8,7 +8,7 @@ import AllInOne from "./AllInOne";
 export default function Combinatorics() {
     return (
         <Topic title="Kombinatorik">
-            <AllInOne title ="All-in-one:"/> <br/>
+            <AllInOne title ="All-in-one:"/>
             <GoldenListHead title = "Sn,k Rechner:" function={snk2} text =
                 {["Bälle unterscheidbar",
                     "Urnen gleich",
