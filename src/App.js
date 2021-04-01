@@ -8,12 +8,12 @@ import Graphs from "./components/graphs";
 function App() {
     return (
         <div className="App"
-             style={{display: "flex", flexDirection: "column", height: "100vh", margin: "0 1rem 0 1rem"}}>
-            <Header/>
-            <Algebra/>
-            <Graphs/>
-            <Combinatorics/>
-            <Footer/>
+            style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", minHeight: "100vh" }}>
+            <Header />
+            <Algebra />
+            <Graphs />
+            <Combinatorics />
+            <Footer />
         </div>
     );
 }
