@@ -15,8 +15,8 @@
         --secondaryBacgroundColor: #f6f6f6;
         --tertiaryBackgroundColor: #f6f6f6;
         --primaryTextColor: black;
-		--okColor: green;
-        --errorColor: red;
+		--okColor: lightgreen;
+        --errorColor: pink;
     }
 }
 
