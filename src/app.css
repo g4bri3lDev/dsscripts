@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: light) {
     .App {
         --primaryBackgroundColor: #f6f6f6;
-        --secondaryBacgroundColor: #f6f6f6;
+        --secondaryBackgroundColor: #f6f6f6;
         --tertiaryBackgroundColor: #f6f6f6;
         --primaryTextColor: black;
 		--okColor: lightgreen;
