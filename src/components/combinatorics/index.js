@@ -1,9 +1,10 @@
 import React from "react";
 import Topic from "../Topic";
 import GoldenListHead from "./GoldenListHead";
-import {ank, bnk, cnk, dnk, enk, fnk, gnk, hnk, pnk, snk2, sumOfSnk, fact, allInOne} from "../../functions/combinatorics/allInOne";
+import {ank, bnk, pnk, snk2} from "../../functions/combinatorics/allInOne";
 import AllInOne from "./AllInOne";
 
+// TODO: cnk, dnk, enk, fnk, gnk, hnk, sumOfSnk, fact
 export default function Combinatorics() {
     return (
         <Topic title="Kombinatorik">
