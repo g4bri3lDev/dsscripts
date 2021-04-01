@@ -3,9 +3,11 @@ function isAlreadySorted(list) {
         return true
     }
     for (let i = 1; i < list.length; i++) {
-        return list[i - 1] <= list[i];
-
+        if (list[i - 1] > list[i]) {
+            return false
+        }
     }
+    return true
 }
 
 function convertToArray(sequence) {
@@ -23,10 +25,11 @@ function havelHakimi(sequenceArray, result) {
         return result
     }
     if (!isAlreadySorted(sequenceArray)) {
+        console.log(sequenceArray + " not sorted yet")
         result.steps.push(convertToSequence(sequenceArray) + " -sortiert-> " + convertToSequence(sequenceArray.sort((a, b) => a - b)))
         sequenceArray = sequenceArray.sort((a, b) => a - b)
     }
-    if (sequenceArray[sequenceArray.length - 1] > sequenceArray.length - 1) {
+    if (sequenceArray[sequenceArray.length - 1] > sequenceArray.length - 1 || sequenceArray.some(el => el < 0)) {
         result.canBeRealized = false
         result.steps.push("Graph ist nicht realisierbar ❌")
         return result
@@ -34,13 +37,7 @@ function havelHakimi(sequenceArray, result) {
     let before = [...sequenceArray]
     let lastElement = parseInt(sequenceArray.pop())
     for (let i = sequenceArray.length - 1; i > sequenceArray.length - lastElement - 1; i--) {
-        if (parseInt(sequenceArray[i]) > 0) {
-            sequenceArray[i] -= 1
-        } else {
-            result.canBeRealized = false
-            result.steps.push("Graph ist nicht realisierbar ❌")
-            return result
-        }
+        sequenceArray[i] -= 1
     }
     result.steps.push(convertToSequence(before) + " -Havel-Hakimi-> " + convertToSequence(sequenceArray))
     return havelHakimi(sequenceArray, result)
