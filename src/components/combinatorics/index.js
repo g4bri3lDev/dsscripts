@@ -1,7 +1,7 @@
 import React from "react";
 import Topic from "../Topic";
 import GoldenListHead from "./GoldenListHead";
-import {ank, bnk, cnk, dnk, enk, fnk, gnk, hnk, pnk, snk2, fact, pow, sumOfSnk} from "../../functions/combinatorics/allInOne";
+import {ank, bnk, cnk, dnk, enk, fnk, gnk, hnk, pnk, snk2, fact, sumOfSnk} from "../../functions/combinatorics/allInOne";
 import AllInOne from "./AllInOne";
 
 // TODO: cnk, dnk, enk, fnk, gnk, hnk, sumOfSnk, fact
