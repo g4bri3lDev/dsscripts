@@ -3,6 +3,8 @@
     --secondaryBacgroundColor: #262626;
     --tertiaryBackgroundColor: #2d2d2d;
     --primaryTextColor: #d8d4cf;
+    --okColor: darkgreen;
+    --errorColor: darkred;
     background-color: var(--primaryBackgroundColor);
     color: var(--primaryTextColor);
 }
@@ -13,6 +15,8 @@
         --secondaryBacgroundColor: #f6f6f6;
         --tertiaryBackgroundColor: #f6f6f6;
         --primaryTextColor: black;
+		--okColor: lightgreen;
+        --errorColor: pink;
     }
 }
 
@@ -55,9 +59,9 @@ table, th, td {
 }
 
 .statusButton {
-	background: darkgreen;
+	background-color: var(--okColor);
 }
 
 .statusButton:disabled {
-	background: darkred;
+	background-color: var(--errorColor);
 }
