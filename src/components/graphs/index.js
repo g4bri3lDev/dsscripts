@@ -7,7 +7,7 @@ export default function Combinatorics() {
     return (
         <Topic title="Graphen">
             <GaleShapley title="Gale-Shapley:"/>
-            <GraphProperties title="Graphenenigenschaften:"/>
+            <GraphProperties title="Grapheneigenschaften:"/>
         </Topic>
     )
 }
