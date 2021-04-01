@@ -14,8 +14,8 @@ export default function AllInOne(props) {
 
 	return (
 		<Card title={props.title}>
-			<input value={n} size="10" onChange={event => setN(parseInt(event.target.value))} type="number" placeholder="n" style={inputStyle}/>
-			<input value={k} size="10" onChange={event => setK(parseInt(event.target.value))} type="number" placeholder="k" style={inputStyle}/><br/>
+			<input value={n} min="0" size="10" onChange={event => setN(parseInt(event.target.value))} type="number" placeholder="n" style={inputStyle}/>
+			<input value={k} min="0" size="10" onChange={event => setK(parseInt(event.target.value))} type="number" placeholder="k" style={inputStyle}/><br/>
 			<CheckBox label="Bälle unterscheidbar" callback={setKugelnUnterscheidbar}/><br/>
 			<CheckBox label="Urnen unterscheidbar" callback={setUrnenUnterscheidbar}/><br/>
 			<DropDown label="Bedingung" options={["beliebig", "injektiv", "surjektiv", "bijektiv"]} callback={setBedingung}/>
