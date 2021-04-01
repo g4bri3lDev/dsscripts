@@ -1,5 +1,7 @@
+
+[![CI](https://github.com/g4bri3lDev/dsscripts/actions/workflows/main.yml/badge.svg)](https://github.com/g4bri3lDev/dsscripts/actions/workflows/main.yml)
 # DS Skripte
-`If you find any errors or got ideas for something new, please start an issue either we do it or you do it yourself`
+`If you find any errors or got ideas for something new, please start an issue. Either we do it or you do it yourself`
 
 Collaboration of random students working on calculators or algorythms for a math project.
 Main cause is to learn JavaScript and have fun doing some stuff.
