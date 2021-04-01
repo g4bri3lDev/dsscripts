@@ -1,7 +1,7 @@
 import React from "react";
 import Topic from "../Topic";
 import GoldenListHead from "./GoldenListHead";
-import {ank, bnk, cnk, dnk, enk, fnk, gnk, hnk, pnk, snk2, fact, pow, sumOfSnk} from "../../functions/combinatorics/allInOne";
+import {ank, bnk, cnk, dnk, enk, fnk, gnk, hnk, pnk, snk2, fact, sumOfSnk} from "../../functions/combinatorics/allInOne";
 import AllInOne from "./AllInOne";
 
 // TODO: cnk, dnk, enk, fnk, gnk, hnk, sumOfSnk, fact
@@ -10,7 +10,7 @@ export default function Combinatorics(props) {
         <Topic title="Kombinatorik" containerStyle={{flexDirection: "column"}}>
             <AllInOne title ="All-in-one:"/>
             <Topic title="Beliebig viele Bälle pro Urne (beliebig)">
-            	<GoldenListHead title="n^k Rechner:" function={pow} text={[
+            	<GoldenListHead title="n^k Rechner:" function={Math.pow} text={[
             		"Bälle unterscheidbar",
             		"Urnen unterscheidbar"
             	]}/>
