@@ -23,8 +23,8 @@ export function gsRun(input, n) {
 				// find most attractive woman he didn't yet propose to
 				for(currentPreference = 0; currentPreference<n; currentPreference++){
 				//for(let j=n-1; j>=0; j--){
-					if(input[man][0][currentPreference]>=0){
-						woman = input[man][0][currentPreference]-1;
+					if(input[0][man][currentPreference]>=0){
+						woman = input[0][man][currentPreference]-1;
 						break findloop;
 					}
 				}
@@ -42,11 +42,11 @@ export function gsRun(input, n) {
 			if(currentMan >= 0){
 				// better? (just look who comes first in the table)
 				for(let i=0; i<n; i++){
-					let nextPreference = input[woman][1][i]-1;
+					let nextPreference = input[1][woman][i]-1;
 					// current man is better
 					if(nextPreference === currentMan) {
 						// remember rejection
-						input[man][0][currentPreference] = -1;
+						input[0][man][currentPreference] = -1;
 						let lastIndex = result.length;
 						result[lastIndex] = JSON.parse(JSON.stringify(result[lastIndex-1]));
 						result[lastIndex][0] = [];
@@ -59,7 +59,7 @@ export function gsRun(input, n) {
 					else if(nextPreference === man){
 						// engage!
 						// mark as proposed
-						input[man][0][currentPreference] = -1;
+						input[0][man][currentPreference] = -1;
 						let lastIndex = result.length;
 						result[lastIndex] = JSON.parse(JSON.stringify(result[lastIndex-1]));
 						// unengage previous man
@@ -77,7 +77,7 @@ export function gsRun(input, n) {
 			// not engaged
 			else {
 				// engage!
-				input[man][0][currentPreference] = -1;
+				input[0][man][currentPreference] = -1;
 				let lastIndex = result.length;
 				result[lastIndex] = JSON.parse(JSON.stringify(result[lastIndex-1]));
 				result[lastIndex][0] = [];
