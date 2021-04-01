@@ -21,11 +21,25 @@
 }
 
 .Card {
-    background-color: var(--secondaryBacgroundColor);
+    background-color: var(--secondaryBackgroundColor);
+    /*boxShadow: "0 4px 8px 0 rgba(0,0,0,1)";*/
+    border: 1px solid var(--primaryTextColor);
+    margin: 0.5rem;
+    padding: 2rem;
+    text-align: center;
 }
 
 .Topic {
     background-color: var(--tertiaryBackgroundColor);
+	display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.Topic > div {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 }
 
 input {
@@ -52,6 +66,12 @@ table, th, td {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.flexContainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 }
 
 .narrowTable th, .narrowTable td {
