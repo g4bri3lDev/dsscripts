@@ -1,13 +1,11 @@
 import React from "react";
 import Topic from "../Topic";
-import PNK from "./PNK";
-import SNK from "./SNK";
+import AllInOne from "./AllInOne";
 
 export default function Combinatorics() {
     return (
         <Topic title="Kombinatorik">
-            <PNK title ="Pn,k Rechner:"/>
-            <SNK title ="Sn,k Rechner:"/>
+            <AllInOne title ="All-in-one:"/>
         </Topic>
     )
 }
