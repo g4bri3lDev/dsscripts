@@ -1,27 +1,26 @@
 import React from "react";
 import Topic from "../Topic";
 import GoldenListHead from "./GoldenListHead";
-import {calcPnk} from "../../functions/combinatorics/pnk";
-import {calcSnk} from "../../functions/combinatorics/snk";
-import {a2} from "../../functions/combinatorics/a2";
-import {bino} from "../../functions/combinatorics/bino";
+import {ank, bnk, cnk, dnk, enk, fnk, gnk, hnk, pnk, snk2, sumOfSnk, fact, allInOne} from "../../functions/combinatorics/allInOne";
+import AllInOne from "./AllInOne";
 
 export default function Combinatorics() {
     return (
         <Topic title="Kombinatorik">
-            <GoldenListHead title = "Sn,k Rechner:" function={calcSnk} text =
+            <AllInOne title ="All-in-one:"/>
+            <GoldenListHead title = "Sn,k Rechner:" function={snk2} text =
                 {["Bälle unterscheidbar",
                     "Urnen gleich",
                     "mind. 1 Ball pro Urne (surjektiv)"]}/>
-            <GoldenListHead title = "Pn,k Rechner:" function={calcPnk} text =
+            <GoldenListHead title = "Pn,k Rechner:" function={pnk} text =
                 {["Bälle gleich",
                 "Urnen gleich",
                 "mind. 1 Ball pro Urne (surjektiv)"]}/>
-            <GoldenListHead title = "Fallende Faktorielle:" function={a2} text =
+            <GoldenListHead title = "Fallende Faktorielle:" function={ank} text =
                 {["Bälle unterscheidbar",
                     "Urnen unterscheidbar",
                     "beliebig viele Bälle pro Urne"]}/>
-            <GoldenListHead title = "Binomialkoeffizient:" function={bino} text =
+            <GoldenListHead title = "Binomialkoeffizient:" function={bnk} text =
                 {["Bälle gleich",
                     "Urnen gleich",
                     "höchstens ein Ball pro Urne (injektiv)"]}/>
