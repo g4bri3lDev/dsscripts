@@ -13,7 +13,7 @@ export default function GoldenListHead(props) {
             <input value={k} onChange={event => setK(event.target.value)} type="number" placeholder="k"
                    style={inputStyle}/>
             <br/>
-            <button onClick={() => setResult(props.function(n, k))}>Calculate
+            <button onClick={() => setResult(props.function(parseInt(n), parseInt(k)))}>Calculate
             </button><br/>
             {result}
             <p style={{"fontSize":"8pt"}}>
