@@ -10,7 +10,7 @@ export default function Combinatorics(props) {
         <Topic title="Kombinatorik" containerStyle={{flexDirection: "column"}}>
             <AllInOne title ="All-in-one:"/>
             <Topic title="Beliebig viele Bälle pro Urne (beliebig)">
-            	<GoldenListHead title="n^k Rechner:" function={pow} text={[
+            	<GoldenListHead title="n^k Rechner:" function={Math.pow} text={[
             		"Bälle unterscheidbar",
             		"Urnen unterscheidbar"
             	]}/>

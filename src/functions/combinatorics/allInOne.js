@@ -65,10 +65,6 @@ export function fact(n) {
 	return f;
 }
 
-export function pow(n,k) {
-	return Math.pow(n,k);
-}
-
 function isEmpty(value) {
 	return (value === null || value === undefined || value === "");
 }
