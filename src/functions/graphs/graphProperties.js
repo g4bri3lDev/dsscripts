@@ -25,7 +25,6 @@ function havelHakimi(sequenceArray, result) {
         return result
     }
     if (!isAlreadySorted(sequenceArray)) {
-        console.log(sequenceArray + " not sorted yet")
         result.steps.push(convertToSequence(sequenceArray) + " -sortiert-> " + convertToSequence(sequenceArray.sort((a, b) => a - b)))
         sequenceArray = sequenceArray.sort((a, b) => a - b)
     }
@@ -44,7 +43,7 @@ function havelHakimi(sequenceArray, result) {
 
 }
 
-export function canBeRealized(sequence) {
+export async function canBeRealized(sequence) {
     const result = {
         canBeRealized,
         steps: []
@@ -65,5 +64,35 @@ export function handshakingLemma(sequence) {
     result.steps.push("|V| = " + result.vertices)
     result.steps.push("Σv∈V deg(v) = 2 |E|")
     result.steps.push("|E| = (" + sequence.replaceAll(",", " + ") + ") / 2 = " + result.edges)
+    return result
+}
+
+export function createGraphFromSequence(sequence) {
+    let sequenceArray = convertToArray(sequence).sort((a, b) => a - b)
+    let result = {
+        nodes: [],
+        links: []
+    }
+
+    sequenceArray = sequenceArray.map((node, index) => {
+        return {id: index, degree: parseInt(node)}
+    })
+    result.nodes = [...sequenceArray]
+
+    while (sequenceArray.length > 0) {
+        let steps = sequenceArray[sequenceArray.length - 1].degree
+        for (let i = 1; i <= steps; i++) {
+            result.links.push({
+                source: sequenceArray[sequenceArray.length - 1].id,
+                target: sequenceArray[sequenceArray.length - 1 - i].id
+            })
+            sequenceArray[sequenceArray.length - 1 - i].degree -= 1
+        }
+        sequenceArray.pop()
+        sequenceArray.filter(el => el.degree !== 0)
+        sequenceArray.sort((a, b) => a.degree - b.degree)
+
+    }
+
     return result
 }
