@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import D3Graph from "./graphs/D3Grpah";
+import D3Graph from "./graphs/D3Graph";
 
 export default function PropertyListItem({property, steps, graph}) {
     const [isCollapsed, setIsCollapsed] = useState(true)
