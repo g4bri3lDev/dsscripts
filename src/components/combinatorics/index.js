@@ -31,43 +31,43 @@ export default function Combinatorics(props) {
             	]}/>
             </Topic>
             <Topic title="Höchstens ein Ball pro Urne (injektiv)">
-				<GoldenListHead title="An,k Rechner:" function={ank} text={[
-            		"Bälle unterscheidbar",
-            		"Urnen unterscheidbar"
-            	]}/>
-				<GoldenListHead title="Bn,k Rechner:" function={bnk} text={[
-            		"Bälle gleich",
-            		"Urnen unterscheidbar"
-            	]}/>
-			</Topic>
-			<Topic title="Mindestens ein Ball pro Urne (surjektiv)">
-				<GoldenListHead title="Fn,k Rechner:" function={fnk} text={[
-            		"Bälle unterscheidbar",
-            		"Urnen unterscheidbar"
-            	]}/>
-				<GoldenListHead title="Gn,k Rechner:" function={gnk} text={[
-            		"Bälle gleich",
-            		"Urnen unterscheidbar"
-            	]}/>
-				<GoldenListHead title="Sn,k Rechner:" function={snk2} text={[
-            		"Bälle unterscheidbar",
-            		"Urnen gleich"
-            	]}/>
-				<GoldenListHead title="Pn,k Rechner:" function={pnk} text={[
-            		"Bälle gleich",
-            		"Urnen gleich"
-            	]}/>
-			</Topic>
-			<Topic title="Genau ein Ball pro Urne (bijektiv)">
-				<GoldenListHead title="Factorial" function={fact} text={[
-            		"Bälle unterscheidbar",
-            		"Urnen unterscheidbar"
-            	]}/>
-			</Topic>
-			<Topic title="Sonstige">
-				<GoldenListHead title="Dn,k" function={dnk}/>
-				<GoldenListHead title="En,k" function={enk}/>
-			</Topic>
+                <GoldenListHead title="An,k Rechner:" function={ank} text={[
+                    "Bälle unterscheidbar",
+                    "Urnen unterscheidbar"
+                ]}/>
+                <GoldenListHead title="Bn,k Rechner:" function={bnk} text={[
+                    "Bälle gleich",
+                    "Urnen unterscheidbar"
+                ]}/>
+            </Topic>
+            <Topic title="Mindestens ein Ball pro Urne (surjektiv)">
+                <GoldenListHead title="Fn,k Rechner:" function={fnk} text={[
+                    "Bälle unterscheidbar",
+                    "Urnen unterscheidbar"
+                ]}/>
+                <GoldenListHead title="Gn,k Rechner:" function={gnk} text={[
+                    "Bälle gleich",
+                    "Urnen unterscheidbar"
+                ]}/>
+                <GoldenListHead title="Sn,k Rechner:" function={snk2} text={[
+                    "Bälle unterscheidbar",
+                    "Urnen gleich"
+                ]}/>
+                <GoldenListHead title="Pn,k Rechner:" function={pnk} text={[
+                    "Bälle gleich",
+                    "Urnen gleich"
+                ]}/>
+            </Topic>
+            <Topic title="Genau ein Ball pro Urne (bijektiv)">
+                <GoldenListHead title="Factorial" function={fact} text={[
+                    "Bälle unterscheidbar",
+                    "Urnen unterscheidbar"
+                ]}/>
+            </Topic>
+            <Topic title="Sonstige">
+                <GoldenListHead title="Dn,k" function={dnk}/>
+                <GoldenListHead title="En,k" function={enk}/>
+            </Topic>
         </Topic>
     )
 }

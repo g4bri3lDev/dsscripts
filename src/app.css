@@ -15,7 +15,7 @@
         --secondaryBackgroundColor: #f6f6f6;
         --tertiaryBackgroundColor: #f6f6f6;
         --primaryTextColor: black;
-		--okColor: lightgreen;
+        --okColor: lightgreen;
         --errorColor: pink;
     }
 }
@@ -31,15 +31,15 @@
 
 .Topic {
     background-color: var(--tertiaryBackgroundColor);
-	display: flex;
+    display: flex;
     flex-flow: column wrap;
     justify-content: center;
 }
 
 .Topic > div {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 input {
@@ -69,21 +69,21 @@ table, th, td {
 }
 
 .flexContainer {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .narrowTable th, .narrowTable td {
-	padding: 5px;
+    padding: 5px;
 }
 
 .statusButton {
-	background-color: var(--okColor);
+    background-color: var(--okColor);
 }
 
 .statusButton:disabled {
-	background-color: var(--errorColor);
+    background-color: var(--errorColor);
 }
 
 u {
