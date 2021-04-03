@@ -14,7 +14,7 @@ export default function PropertyListItem({property, steps, graph}) {
                 </ul>
                 : null}
             {graph != null && !isCollapsed ?
-                <D3Graph id="exampleGraph" data={graph}/>
+                <D3Graph id={property + "Graph"} data={graph}/>
                 : null}
         </li>
 
