@@ -26,11 +26,9 @@ export default function D3Graph({data}) {
                 .attr('cy', function (d) {
                     return d.y
                 })
-            u.exit().remove()
             let v = d3.select(graphRef.current)
                 .selectAll('line')
                 .data(data.links)
-
             v.enter()
                 .append('line')
                 .merge(v)
@@ -47,47 +45,19 @@ export default function D3Graph({data}) {
                 .attr('y2', function (d) {
                     return d.target.y
                 })
+            u.exit().remove()
             v.exit().remove()
+
         }
 
         function draw() {
             d3.select(graphRef.current)
             const simulation = d3.forceSimulation(data.nodes)
-                .force('charge', d3.forceManyBody())
+                .force('charge', d3.forceManyBody().strength(-100))
                 .force('center', d3.forceCenter(250, 250))
                 .on('tick', ticked)
-            simulation.force('link', d3.forceLink().links(data.links).distance(100).strength(0))
-            /*drag not working yet*/
+            simulation.force('link', d3.forceLink().links(data.links).distance(100).iterations(50).strength(2))
 
-
-            // d3.select(graphRef.current)
-            //     .call(d3.drag()
-            //         .container(graphRef.current)
-            //         .subject(dragSubject)
-            //         .on("start", dragStart)
-            //         .on("drag", drag)
-            //         .on("end", dragEnd)
-            //
-            //     )
-            // function dragSubject(event){
-            //     return simulation.find(event.x, event.y)
-            // }
-            // function dragStart(event){
-            //     if (!event.active) simulation.alphaTarget(0.3).restart()
-            //     event.subject.fx=event.subject.x
-            //     event.subject.fy=event.subject.y
-            // }
-            // function drag(event) {
-            //
-            //     event.subject.fx = event.subject.x
-            //     event.subject.fy = event.subject.y
-            //
-            // }
-            // function dragEnd(event){
-            //     if (!event.active) simulation.alphaTarget(0)
-            //     event.subject.fx=null
-            //     event.subject.fy=null
-            // }
         }
 
         draw()
