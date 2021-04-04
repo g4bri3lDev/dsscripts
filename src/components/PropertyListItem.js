@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import D3Graph from "./graphs/D3Graph";
+import '../app.css'
 
-export default function PropertyListItem({property, steps, graph}) {
+export default function PropertyListItem({ property, steps, graph }) {
     const [isCollapsed, setIsCollapsed] = useState(true)
     return (
 
@@ -14,7 +15,7 @@ export default function PropertyListItem({property, steps, graph}) {
                 </ul>
                 : null}
             {graph != null && !isCollapsed ?
-                <D3Graph id={property + "Graph"} data={graph}/>
+                <D3Graph id={property + "Graph"} data={graph} />
                 : null}
         </li>
 

@@ -85,3 +85,7 @@ table, th, td {
 .statusButton:disabled {
 	background-color: var(--errorColor);
 }
+
+u {
+    cursor: pointer;
+}
