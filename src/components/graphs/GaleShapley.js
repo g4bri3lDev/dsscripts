@@ -28,6 +28,11 @@ export default function GaleShapley(props) {
     }
 
     const swapSides = () => {
+		swapValues();
+    	setTypes([types[1],types[0]]);
+    }
+
+    const swapValues = () => {
 		let newTable = [];
         newTable[0] = [];
         newTable[1] = [];
@@ -39,7 +44,7 @@ export default function GaleShapley(props) {
              	newTable[1][j][k] = table[0][j][k];
 	        }
     	}
-        setTable(newTable);
+    	setTable(newTable);
     }
 
     const validate = () => {
@@ -117,6 +122,7 @@ export default function GaleShapley(props) {
             </div>
             <p>
                 <button onClick={() => setPrefix(!prefix)}>Toggle Prefix</button>&nbsp;
+                <button onClick={() => swapValues()}>Swap Values</button>&nbsp;
 				<button onClick={() => swapSides()}>Swap Sides</button>&nbsp;
                 <button onClick={() => calculate()} disabled={!validate()} className="statusButton">Calculate</button>
             </p>
