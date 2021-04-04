@@ -25,7 +25,7 @@
     /*boxShadow: "0 4px 8px 0 rgba(0,0,0,1)";*/
     border: 1px solid var(--primaryTextColor);
     margin: 0.5rem;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
 }
 
