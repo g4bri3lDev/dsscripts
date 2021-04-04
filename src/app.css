@@ -89,3 +89,13 @@ table, th, td {
 u {
     cursor: pointer;
 }
+
+@media (max-width: 600px) {
+    .oversizeCard {
+        transform: scale(0.9);
+    }
+    .Card {
+        padding: 0.1rem;
+        margin: 0.1rem;
+    }
+}
