@@ -1,10 +1,10 @@
 import Topic from "../Topic";
-import KVDiagram from "./KVDiagram";
+import KNFDNF from "./KNFDNF";
 
 export default function Logic() {
     return (
         <Topic title="Logik">
-            <KVDiagram title="KV Diagramm:"/>
+            <KNFDNF title="KV Diagramm:"/>
         </Topic>
     )
 
