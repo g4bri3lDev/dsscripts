@@ -12,11 +12,14 @@ export default function Combinatorics(props) {
             <Topic title="Beliebig viele Bälle pro Urne (beliebig)">
             	<GoldenListHead title="n^k Rechner:" function={Math.pow} text={[
             		"Bälle unterscheidbar",
-            		"Urnen unterscheidbar"
+            		"Urnen unterscheidbar",
+					"Beispiel Aufgabenstellung: |{(s1,...,s5) ∈ [6]^5}|"
             	]}/>
             	<GoldenListHead title="Cn,k Rechner:" function={cnk} text={[
             		"Bälle gleich",
-            		"Urnen unterscheidbar"
+            		"Urnen unterscheidbar",
+					"Bsp. Aufgabenstellung: |{(s1,...,s13) ∈ N| s1 + ... s13 = 17}| n = 13 k = 4",
+					"Bsp. Aufgabenstellung: |{( |f^-1(1)| ,..., |f^-1(13)| )| f: [17] -> [13]}| n = 13 k = 17"
             	]}/>
 				<GoldenListHead title="sum(Sn,k) Rechner:" function={sumOfSnk} text={[
             		"Bälle unterscheidbar",
