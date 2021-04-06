@@ -16,12 +16,12 @@ export default function GaleShapley(props) {
     // TODO: better defaults?
     const getDefault = (n) => {
         let newTable = [];
-        for (let i = 0; i < 2; i++) {
+        for(let i=0; i<2; i++) {
             newTable[i] = [];
-            for (let j = 0; j < n; j++) {
+            for(let j=0; j<n; j++) {
                 newTable[i][j] = [];
-                for (let k = 0; k < n; k++) {
-                    newTable[i][j][k] = n - k;
+                for(let k=0; k<n; k++){
+                    newTable[i][j][k] = n-k;
                 }
             }
         }
@@ -30,19 +30,19 @@ export default function GaleShapley(props) {
 
     const swapSides = () => {
         swapValues();
-        setTypes([types[1], types[0]]);
+        setTypes([types[1],types[0]]);
     }
 
     const swapValues = () => {
         let newTable = [];
         newTable[0] = [];
         newTable[1] = [];
-        for (let j = 0; j < n; j++) {
+        for(let j=0; j<n; j++) {
             newTable[0][j] = [];
             newTable[1][j] = [];
-            for (let k = 0; k < n; k++) {
-                newTable[0][j][k] = table[1][j][k];
-                newTable[1][j][k] = table[0][j][k];
+               for(let k=0; k<n; k++){
+                 newTable[0][j][k] = table[1][j][k];
+                 newTable[1][j][k] = table[0][j][k];
             }
         }
         setTable(newTable);
@@ -50,12 +50,12 @@ export default function GaleShapley(props) {
 
     const validate = () => {
         let test = 0;
-        for (let i = 1; i <= n; i++) {
+        for(let i=1; i<=n; i++) {
             test += i;
         }
-        for (let i = 0; i < 2; i++) {
-            for (let j = 0; j < n; j++) {
-                if (table[i][j].reduce((a, b) => a + b, 0) !== test) {
+        for(let i=0; i<2; i++) {
+            for(let j=0; j<n; j++) {
+                if(table[i][j].reduce((a,b) => a+b, 0) !== test){
                     return false;
                 }
             }
@@ -65,7 +65,7 @@ export default function GaleShapley(props) {
 
     const calculate = () => {
         let r = gsRun(JSON.parse(JSON.stringify(table)), n);
-        if (r != null) setResult(r);
+        if(r != null) setResult(r);
     }
 
     const getPrefix = (type) => {
@@ -101,30 +101,30 @@ export default function GaleShapley(props) {
                 <br />
                 ({types[0]} machen {types[1]} Antrag)
             </p>
-            <div style={{ display: "flex", flexFlow: "wrap" }}>
-                {table.map((type, typeId) =>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th colSpan={n}>{types[typeId]}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {type.map((row, rowId) =>
-                                <tr>
-                                    {row.map((col, colId) =>
-                                        <td><input size="2" value={col} min="1" max={n} onChange={event => setCell(typeId, rowId, colId, event.target.value)} type="number" style={inputStyle} /></td>
-                                    )}
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
-                )}
+            <div style={{display: "flex", flexFlow: "wrap"}}>
+               {table.map((type, typeId) =>
+            <table>
+                <thead>
+                <tr>
+                    <th colSpan={n}>{types[typeId]}</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {type.map((row, rowId) =>
+                    <tr>
+                           {row.map((col, colId) =>
+                           <td><input size="2" value={col} min="1" max={n} onChange={event => setCell(typeId,rowId,colId,event.target.value)} type="number" style={inputStyle}/></td>
+                        )}
+                    </tr>
+                    )}
+                </tbody>
+            </table>
+            )}
             </div>
             <p>
                 <button onClick={() => setPrefix(!prefix)}>Toggle Prefix</button>&nbsp;
                 <button onClick={() => swapValues()}>Swap Values</button>&nbsp;
-				<button onClick={() => swapSides()}>Swap Sides</button>&nbsp;
+                <button onClick={() => swapSides()}>Swap Sides</button>&nbsp;
                 <button onClick={() => calculate()} disabled={!validate()} className="statusButton">Calculate</button>
             </p>
             <table className="narrowTable">
@@ -169,7 +169,7 @@ export default function GaleShapley(props) {
                 {symbols[1]} Korb<br />
                 {symbols[2]} Trennung+Verlobung<br />
                 Keine Garantie auf die Korrektheit der Ergebnisse!
-			</p>
+            </p>
         </Card>
     )
 }

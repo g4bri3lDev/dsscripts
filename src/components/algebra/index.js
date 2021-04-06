@@ -2,6 +2,7 @@ import React from "react";
 import EEA from "./EEA";
 import Phi from "./Phi";
 import OrdFinder from "./OrdFinder";
+import KoprimeRestgruppe from "./KoprimeRestgruppe";
 import Topic from "../Topic";
 
 export default function Algebra() {
@@ -10,6 +11,7 @@ export default function Algebra() {
             <EEA title="EEA:"/>
             <Phi title="Eulerische Phi Funktion:"/>
             <OrdFinder title="Ordnung finden:"/>
+            <KoprimeRestgruppe title="Koprime Restgruppe ℤₙ⃰:"/>
         </Topic>
     )
 }

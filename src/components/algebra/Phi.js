@@ -18,6 +18,5 @@ export default function Phi(props) {
                 </ul>
                 : null}
         </Card>
-
     )
 }
