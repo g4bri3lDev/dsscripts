@@ -14,7 +14,7 @@ export default function KVMap({grid, setBox}) {
                     col.map((row, rowKey) => {
                         return (
                             <rect key={colKey + rowKey} x={25 + 50 * rowKey} y={25 + 50 * colKey} stroke="black"
-                                  strokeWidth="0.1" height="50px" width="50px" fill={row ? "black" : "white"}
+                                  strokeWidth="0.1" height="50px" width="50px" fill={row ? "gray" : "white"}
                                   onClick={() => setBox(colKey, rowKey)}/>
                         )
                     })
