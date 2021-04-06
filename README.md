@@ -7,22 +7,24 @@
 Collaboration of random students working on calculators or algorythms for a math project.
 Main cause is to learn JavaScript and have fun doing some stuff.
 
-We want to bring in as many calculators as possible into this.
-Either you hope we aren't to stupid to implement it or you fork it, implement it and become one of the random students working on it.
+We want to bring as many calculators as possible into this.
+If you have any ideas for implementations you can start a new issue and hope we are not to dump to do it
+or you fork this project and implement it yourself.
 
 ### How to start
-- Start and test the app with `yarn start` or `npm start`
+- Start with `yarn start` or `npm start`
 - You can view it in your Browser (http://localhost:3000)
 - If you have any issues starting with npm -> Try installing yarn `npm i --global yarn`
 
 ### Status
-- Algebra (EEA, Eulerische Phi Funktion, Ordnung finden)
-- Graphen (Gale-Shapley)
-- Kombinatorik (Pn,k Rechner| Sn,k Rechner)
-- DARK MODE!!! (Based on your System settings) (maybe a pinguin button to change it will be implemented)
+- Algebra (EEA, Eulerische Phi Funktion, Ordnung finden, Koprime-Restgruppen)
+- Graphen (Gale-Shapley, Havel-Hakimi, Graphen erkennung, Graphendarstellung etc.)
+- Kombinatorik (shiny golden things are in)
+- Logik (KV-Diagramme -> KNF,DNF)
+- DARK MODE!!! (Based on your System settings)
 
 ### In Progress
 - More features for "Graphen"
-- More for "Kombinatorik"
 - Testing everything
 - Localisation
+- For more see the issue List
