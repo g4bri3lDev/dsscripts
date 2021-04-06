@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from "../Card";
 import KVMap from "../KVMap";
+import {printDNF, printKNF} from "../../functions/logic/quinemccluskey";
 
 export default class KNFDNF extends React.Component {
     constructor(props) {
@@ -11,7 +12,9 @@ export default class KNFDNF extends React.Component {
                 [false, false, false, false],
                 [false, false, false, false],
                 [false, false, false, false]
-            ]
+            ],
+            dnf: "",
+            knf: ""
         }
     }
 
@@ -19,6 +22,7 @@ export default class KNFDNF extends React.Component {
         let tmpGrid = [...this.state.grid]
         tmpGrid[col][row] = !tmpGrid[col][row]
         this.setState({grid: tmpGrid})
+        this.setState({dnf: printDNF(this.state.grid), knf: printKNF(this.state.grid)})
     }
 
     render() {
@@ -26,8 +30,8 @@ export default class KNFDNF extends React.Component {
             <Card title={this.props.title}>
                 <KVMap grid={this.state.grid} setBox={this.setBox}/>
                 <ul>
-                    <li>KNF:</li>
-                    <li>DNF:</li>
+                    <li>DNF: {this.state.dnf}</li>
+                    <li>KNF:{this.state.knf}</li>
                 </ul>
             </Card>
         )

@@ -2,13 +2,13 @@ export default function KVMap({grid, setBox}) {
     return (
         <svg viewBox="0 0 250 250" style={{border: "1px solid var(--primaryTextColor)"}}>
             <line x1={75} x2={175} y1={20} y2={20} stroke="var(--primaryTextColor)"/>
-            <text x={120} y={15} fill="var(--primaryTextColor)">p</text>
+            <text x={120} y={15} fill="var(--primaryTextColor)">r</text>
             <line x1={125} x2={225} y1={230} y2={230} stroke="var(--primaryTextColor)"/>
-            <text x={170} y={245} fill="var(--primaryTextColor)">u</text>
+            <text x={170} y={245} fill="var(--primaryTextColor)">t</text>
             <line x1={20} x2={20} y1={75} y2={175} stroke="var(--primaryTextColor)"/>
             <text x={5} y={130} fill="var(--primaryTextColor)">s</text>
-            <line x1={230} x2={230} y1={125} y2={225} fill="var(--primaryTextColor)"/>
-            <text x={235} y={180} fill="var(--primaryTextColor)">w</text>
+            <line x1={230} x2={230} y1={125} y2={225} stroke="var(--primaryTextColor)"/>
+            <text x={235} y={180} fill="var(--primaryTextColor)">x</text>
             {grid.map((col, colKey) => {
                 return (
                     col.map((row, rowKey) => {
