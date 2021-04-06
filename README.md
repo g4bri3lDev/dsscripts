@@ -1,5 +1,6 @@
 
 [![CI](https://github.com/g4bri3lDev/dsscripts/actions/workflows/main.yml/badge.svg)](https://github.com/g4bri3lDev/dsscripts/actions/workflows/main.yml)
+[![CodeQL](https://github.com/g4bri3lDev/dsscripts/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/g4bri3lDev/dsscripts/actions/workflows/codeql-analysis.yml)
 # DS Skripte
 `If you find any errors or got ideas for something new, please start an issue. Either we do it or you do it yourself`
 
