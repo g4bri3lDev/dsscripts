@@ -150,7 +150,7 @@ export function printDNF(mapArray) {
     for (let i = 0; i < piArray.length; i++) {
         DNFString += "( " + (piArray[i][0][0] === 1 ? "R" : piArray[i][0][0] === 0 ? "¬R" : "") + (piArray[i][0][1] === 1 ? "S" : piArray[i][0][1] === 0 ? "¬S" : "") + (piArray[i][0][2] === 1 ? "T" : piArray[i][0][2] === 0 ? "¬T" : "") + (piArray[i][0][3] === 1 ? "X" : piArray[i][0][3] === 0 ? "¬X" : "") + " ) ∨ "
     }
-    return DNFString.slice(0, -2)
+    return DNFString.slice(0, -3)
 }
 
 export function printKNF(mapArray) {
@@ -159,5 +159,5 @@ export function printKNF(mapArray) {
     for (let i = 0; i < piArray.length; i++) {
         KNFString += "( " + (piArray[i][0][0] === 1 ? "¬R" : piArray[i][0][0] === 0 ? "R" : "") + (piArray[i][0][1] === 1 ? "¬S" : piArray[i][0][1] === 0 ? "S" : "") + (piArray[i][0][2] === 1 ? "¬T" : piArray[i][0][2] === 0 ? "T" : "") + (piArray[i][0][3] === 1 ? "¬X" : piArray[i][0][3] === 0 ? "X" : "") + " ) ^ "
     }
-    return KNFString.slice(0, -2)
+    return KNFString.slice(0, -3)
 }
