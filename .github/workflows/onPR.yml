@@ -44,10 +44,3 @@ jobs:
         uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: test
-        
-        
-        
-        
-        
-        
-          cmd: build
