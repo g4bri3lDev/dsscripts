@@ -10,23 +10,19 @@ export function ord(n, a) {
     if (p === 1) {
         return {dividers}
     }
-    let i = 1
-    while (i <= p) {
-        if (p % i === 0) {
-            dividers.push(i)
-        }
-        i++
+    for(let i=1; i<=p; i++) {
+    	if(p % i === 0) {
+    		dividers.push(i)
+    	}
     }
 
-    i = 0
     let ord = []
-    while (i < dividers.length) {
+	for(let i=0; i<dividers.length; i++) {
         let help = bigInt(a).pow(dividers[i]).mod(n)
         ord.push(help.toJSNumber())
         if(help.toJSNumber() === 1) {
             break
         }
-        i++
     }
     console.log(ord.length)
     console.log(dividers.length)

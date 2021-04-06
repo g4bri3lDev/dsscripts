@@ -18,8 +18,8 @@ export default function GoldenListHead(props) {
             {result}
             <p style={{"fontSize":"8pt"}}>
                 {props.text !== undefined ? props.text.map((line) =>
-                	<>{line} <br/></>
-            	) : ""}
+                    <>{line} <br/></>
+                ) : ""}
             </p>
         </Card>
     )
