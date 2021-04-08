@@ -1,3 +1,5 @@
+import {fact} from "../combinatorics/allInOne";
+
 function gcd(a, b) {
     while(a !== b) {
         if(a > b) {
@@ -69,4 +71,10 @@ export function calcElemGroups(group, n) {
         result[i] = calcElemGroup(group[i], n);
     }
     return result;
+}
+
+export function isCyclic(n, factors) {
+    if(n !== null && factors !== null) {
+        return n === 2 || n === 4 || (factors.size === 1 && !factors.has(2)) || (factors.size === 2 && factors.has(2) && factors.get(2) === 1);
+    } else return false;
 }
