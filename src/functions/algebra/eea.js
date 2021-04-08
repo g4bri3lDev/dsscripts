@@ -1,9 +1,13 @@
 export function eea(a, b) {
+
     let solution = []
-        solution.push({
-            a: parseInt(a) < parseInt(b) ? a : b,
-            b: parseInt(b) > parseInt(a) ? b : a
-        })
+    if (a === 0 || b === 0) {
+        return solution
+    }
+    solution.push({
+        a: parseInt(a) < parseInt(b) ? a : b,
+        b: parseInt(b) > parseInt(a) ? b : a
+    })
     let i = 0
 
     while (solution[i].b % solution[i].a !== 0) {

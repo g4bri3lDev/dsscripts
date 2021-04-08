@@ -4,7 +4,6 @@ function toMinTermBinary(mapArray) {
         for (let j = 0; j < mapArray[i].length; j++) {
             if (mapArray[i][j]) {
                 let r = 0, s = 0, t = 0, x = 0
-                // console.log("i: "+i+"j: "+j )
                 //R
                 if (j === 1 || j === 2) {
                     r = 1
@@ -25,7 +24,6 @@ function toMinTermBinary(mapArray) {
             }
         }
     }
-    // console.log(mintermbinary)
     return mintermbinary
 }
 
@@ -39,7 +37,6 @@ function toColumn(mapArray) {
     for (let i = 0; i < mintermbinary.length; i++) {
         column0[0][mintermbinary[i][4]].push(mintermbinary[i])
     }
-    // console.log(column0)
     return column0
 }
 
@@ -62,15 +59,11 @@ export function pairing(mapArray) {
         for (let i = 0; i < column[n].length - 1; i++) {
             for (let j = 0; j < column[n][i].length; j++) {
                 for (let k = 0; k < column[n][i + 1].length; k++) {
-                    // console.log("yay")
                     if (column[n][i + 1][k][7] > column[n][i][j][7]
                         && column[n][i][j][6].every((val, index) => val === column[n][i + 1][k][6][index])
                         && Math.log2(column[n][i + 1][k][7] - column[n][i][j][7]) % 1 === 0) {
                         column[n][i + 1][k][5] = 1
                         column[n][i][j][5] = 1
-                        // console.log(column[n][i][j])
-                        // console.log("equal")
-                        // console.log(column[n][i + 1][k])
                         if (column[n + 1] === undefined) {
                             column.push([
                                 [], [], [], []
@@ -120,7 +113,6 @@ function genPIArray(mapArray) {
                         let property = column[n][i][j][8][k].toString()
                         if (!numberCounter.hasOwnProperty(property)) {
                             numberCounter[property] = 1
-
                         }
                         numberCounter[property] += 1
                     }
@@ -129,8 +121,6 @@ function genPIArray(mapArray) {
             }
         }
     }
-    // console.log(PIArray)
-    // console.log(numberCounter)
     return {PIArray, numberCounter}
 }
 

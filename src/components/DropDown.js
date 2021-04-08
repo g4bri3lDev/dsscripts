@@ -7,7 +7,7 @@ export default function DropDown(props) {
             <label>{props.label}</label>
             <select style={{color: "var(--primaryTextColor)", backgroundColor: "var(--primaryBackgroundColor)"}}
                     name={props.name} onChange={event => props.callback(event.target.value)}>
-                {props.options.map((option) => <option value={option}>{option}</option>)}
+                {props.options.map((option, optionKey) => <option key={optionKey} value={option}>{option}</option>)}
             </select>
         </span>
     );
