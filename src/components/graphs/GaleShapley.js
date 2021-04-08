@@ -130,13 +130,13 @@ export default function GaleShapley(props) {
             <table className="narrowTable">
                 <thead>
                     <tr>
-                        <th></th>
+                        <th/>
                         <th>Verlobung</th>
                         {table.map((_, typeId) => <th colSpan={n}>{types[typeId]} verlobt mit</th>)}
                     </tr>
                     <tr>
-                        <th></th>
-                        <th></th>
+                        <th/>
+                        <th/>
                         {table.map((type, typeId) => type.map((_, j) => <th>{getPrefix(typeId)}{j + 1}</th>))}
                     </tr>
                 </thead>
