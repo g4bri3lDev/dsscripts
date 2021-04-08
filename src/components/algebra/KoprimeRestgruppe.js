@@ -1,40 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import {printPhiFormula} from "../../functions/algebra/phi";
 import {lcmm, primeFactors, calcGroup, calcElemGroups, isCyclic} from "../../functions/algebra/koprimeRestgruppe";
+import {printPrimeFactors, printArrayWithSep} from "../../functions/utils";
 import Card from "../Card";
 import {inputStyle} from "../../styles";
-
-const printMapWithSep = (factors, elemSep, kvSep) => {
-    let s = "";
-    if(factors != null) {
-        let didFirst = false;
-        factors.forEach((exponent, factor) => {
-            if(didFirst) {
-                s += elemSep;
-            } else {
-                didFirst = true;
-            }
-            s += `${factor}${kvSep}${exponent}`;
-        })
-    }
-    return s;
-}
-
-const printArrayWithSep = (array, elemSep) => {
-    let s = "";
-    if(array != null) {
-        let didFirst = false;
-        array.forEach((element) => {
-            if(didFirst) {
-                s += elemSep;
-            } else {
-                didFirst = true;
-            }
-            s += `${element}`;
-        })
-    }
-    return s;
-}
 
 export default function KoprimeRestgruppe(props) {
     const [factors, setFactors] = useState(null)
@@ -56,7 +25,7 @@ export default function KoprimeRestgruppe(props) {
         <Card title={props.title}>
             <input value={n} min="1" max="50" onChange={event => setN(parseInt(event.target.value))} type="number" placeholder="n" style={inputStyle} />
             <br />
-            Primfaktoren: {n} = {printMapWithSep(factors, " · ", "^")}
+            Primfaktoren: {n} = {printPrimeFactors(factors)}
             <br />
             ℤₙ⃰={"{"+group+"}"}
             <br />
