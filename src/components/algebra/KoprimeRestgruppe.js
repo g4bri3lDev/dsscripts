@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {printPhiFormula} from "../../functions/algebra/phi";
-import {lcmm, primeFactors, calcGroup, calcElemGroups} from "../../functions/algebra/koprimeRestgruppe";
+import {lcmm, primeFactors, calcGroup, calcElemGroups, isCyclic} from "../../functions/algebra/koprimeRestgruppe";
 import Card from "../Card";
 import {inputStyle} from "../../styles";
 
@@ -73,8 +73,10 @@ export default function KoprimeRestgruppe(props) {
                 : ""
             }
             <br />
-            λ=kgV{"{"+printArrayWithSep(elemGroupsOrd, ",")+"}="+lcmm(elemGroupsOrd)}
             </ul>
+            λ=kgV{"{"+printArrayWithSep(elemGroupsOrd, ",")+"}="+lcmm(elemGroupsOrd)}
+            <br />
+            zyklisch ⇔ n∈&#123;2,4,pʳ,2pʳ|p∈ℙ∖&#123;2&#125;,r∈ℕ&#125;: {isCyclic(n, factors) ? "✅" : "❌"}
         </Card>
     )
 }
