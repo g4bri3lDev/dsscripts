@@ -33,6 +33,18 @@ describe("matrix multiplication tests", () => {
             expect(matrixPower(matrix1, 1)).toEqual(matrix1)
             expect(matrixPower(matrix2, 1)).toEqual(matrix2)
         })
+        test("no input for power should be the matrix itself", () => {
+            expect(matrixPower(matrix1, "")).toEqual(matrix1)
+            expect(matrixPower(matrix2, "")).toEqual(matrix2)
+            expect(matrixSum(matrix1, "")).toEqual(matrix1)
+            expect(matrixSum(matrix2, "")).toEqual(matrix2)
+        })
+        test("negative input for power should be the matrix itself", () => {
+            expect(matrixPower(matrix1, -1)).toEqual(matrix1)
+            expect(matrixPower(matrix2, -1)).toEqual(matrix2)
+            expect(matrixSum(matrix1, -1)).toEqual(matrix1)
+            expect(matrixSum(matrix2, -1)).toEqual(matrix2)
+        })
         test("power of 2", () => {
             expect(matrixPower(matrix1, 2)).toEqual([[2, 0, 2, 1], [1, 1, 2, 1], [0, 1, 1, 1], [1, 0, 0, 0]])
             expect(matrixPower(matrix2, 2)).toEqual([[1, 1, 1, 1], [0, 2, 1, 1], [1, 1, 2, 0], [1, 1, 1, 1]]

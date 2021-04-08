@@ -30,6 +30,9 @@ function multiplyMatrixWithValue(matrix, value) {
 }
 
 export function matrixPower(matrix, power) {
+    if (power === "" || power === null || parseInt(power) < 0) {
+        return matrix
+    }
     if (parseInt(power) === 0) {
         return id4x4
     }
@@ -52,6 +55,9 @@ function matrixAddition(m1, m2) {
 }
 
 export function matrixSum(matrix, n) {
+    if (n === "" || n === null || parseInt(n) < 0) {
+        return matrix
+    }
     if (parseInt(n) === 0) {
         return id4x4
     } else {

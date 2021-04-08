@@ -24,7 +24,7 @@ export default function MatrixMultiplication({title}) {
             {mode === "matrixMultiplikation" ? <>
                     <DropDown label="  " options={["^", "<="]} callback={setOption}/>
 
-                    <input type="number" style={{width: 25}} value={power}
+                    <input type="number" style={{width: 25}} value={power} min={0}
                            onChange={event => setPower(event.target.value)}/>
                 </>
                 : "P"}
@@ -34,7 +34,7 @@ export default function MatrixMultiplication({title}) {
             <Matrix editable={false} data={multipliedMatrix} setData={setMultipliedMatrix}/>
             {mode === "randomSurfer" ? <>
                     Q
-                    <input type="number" style={{width: 25}} value={power}
+                    <input type="number" style={{width: 25}} value={power} min={0}
                            onChange={event => setPower(event.target.value)}/>
                     <button onClick={() => setMatrixAfterT(probabilityMatrixAfterT(data, power))}>=</button>
                     <Matrix editable={false} data={matrixAfterT} setData={setMatrixAfterT}/>
