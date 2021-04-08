@@ -15,7 +15,7 @@ export default function Gruppen(props) {
 
     return (
         <Card title={props.title}>
-            <input value={n} min="1" max="50" onChange={event => setN(parseInt(event.target.value))} type="number" placeholder="n" style={inputStyle} />
+            <input value={n} min="1" max="9999" onChange={event => setN(parseInt(event.target.value))} type="number" placeholder="n" style={inputStyle} />
             <br />
             Primfaktoren: {n} = {printPrimeFactors(factors)}
             <br />
