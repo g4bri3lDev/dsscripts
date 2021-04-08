@@ -13,7 +13,9 @@ export default function Combinatorics(props) {
             	<GoldenListHead title="n^k Rechner:" function={Math.pow} text={[
             		"Bälle unterscheidbar",
             		"Urnen unterscheidbar",
-					"Beispiel Aufgabenstellung: |{(s1,...,s5) ∈ [6]^5}|"
+					"Beispiel Aufgabenstellung: |{(s1,...,s5) ∈ [6]^5}|",
+                    "Mit Zurücklegen",
+                    "Reihenfolge relevant"
             	]}/>
             	<GoldenListHead title="Cn,k Rechner:" function={cnk} text={[
             		"Bälle gleich",
@@ -33,21 +35,29 @@ export default function Combinatorics(props) {
             <Topic title="Höchstens ein Ball pro Urne (injektiv)">
                 <GoldenListHead title="An,k Rechner:" function={ank} text={[
                     "Bälle unterscheidbar",
-                    "Urnen unterscheidbar"
+                    "Urnen unterscheidbar",
+                    "Bsp. Aufgabenstellung: {(s1,...,sk) ∈ [n]^k | |{s1,...,sk}| = k}",
+                    "Ohne Zurücklegen",
+                    "Reihenfolge relevant"
                 ]}/>
                 <GoldenListHead title="Bn,k Rechner:" function={bnk} text={[
                     "Bälle gleich",
-                    "Urnen unterscheidbar"
+                    "Urnen unterscheidbar",
+                    "Bsp. Aufgabenstellung: {(s1,...,sk) ∈ [n]^k | s1 < ... < sk}",
+                    "Ohne Zurücklegen",
+                    "Reihenfolge irrelevant"
                 ]}/>
             </Topic>
             <Topic title="Mindestens ein Ball pro Urne (surjektiv)">
                 <GoldenListHead title="Fn,k Rechner:" function={fnk} text={[
                     "Bälle unterscheidbar",
-                    "Urnen unterscheidbar"
+                    "Urnen unterscheidbar",
+                    "Bsp. Aufgabenstellung: {(s1,...,sk) ∈ [n]^k | |{s1,...,sk}| = n}"
                 ]}/>
                 <GoldenListHead title="Gn,k Rechner:" function={gnk} text={[
                     "Bälle gleich",
-                    "Urnen unterscheidbar"
+                    "Urnen unterscheidbar",
+                    "{(s1,...,sk) ∈ ℕ^k |s1 + ... + sk = n} - ohne die Null"
                 ]}/>
                 <GoldenListHead title="Sn,k Rechner:" function={snk2} text={[
                     "Bälle unterscheidbar",
@@ -65,7 +75,13 @@ export default function Combinatorics(props) {
                 ]}/>
             </Topic>
             <Topic title="Sonstige">
-                <GoldenListHead title="Dn,k" function={dnk}/>
+                <GoldenListHead title="Dn,k" function={dnk} text = {[
+                    "Bälle gleich",
+                    "Urnen unterscheidbar",
+                    "{(s1,...,sk) ∈ ℕ0^k |s1 + ... + sk = n} mit ℕ0",
+                    "Mit Zurücklegen",
+                    "Reihenfolge irrelevant"
+                    ]}/>
                 <GoldenListHead title="En,k" function={enk}/>
             </Topic>
         </Topic>

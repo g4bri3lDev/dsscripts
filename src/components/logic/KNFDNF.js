@@ -29,9 +29,9 @@ export default class KNFDNF extends React.Component {
         return (
             <Card title={this.props.title}>
                 <KVMap grid={this.state.grid} setBox={this.setBox}/>
-                <ul>
-                    <li>DNF: {this.state.dnf}</li>
-                    <li>KNF:{this.state.knf}</li>
+                <ul style={{textAlign: "left"}}>
+                    <li>V(Ʌ) DNF: {this.state.dnf}</li>
+                    <li>Ʌ(V) KNF:{this.state.knf}</li>
                 </ul>
             </Card>
         )
