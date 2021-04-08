@@ -8,6 +8,7 @@ import {
     probabilityMatrixAfterT
 } from "../../functions/graphs/matrixMultiplication";
 import DropDown from "../DropDown";
+import {inputStyle} from "../../styles";
 
 export default function MatrixMultiplication({title}) {
     const [data, setData] = useState(new Array(4).fill(0).map(() => new Array(4).fill(0)))
@@ -18,19 +19,20 @@ export default function MatrixMultiplication({title}) {
     const [matrixAfterT, setMatrixAfterT] = useState(probabilityMatrixAfterT(data, power))
     return (
         <Card title={title}>
-
             <Matrix editable={true} data={data} setData={setData}/>
-            <DropDown options={["matrixMultiplikation", "randomSurfer"]} callback={setMode}/>
-            {mode === "matrixMultiplikation" ? <>
-                    <DropDown label="  " options={["^", "<="]} callback={setOption}/>
-
-                    <input type="number" style={{width: 25}} value={power} min={0}
-                           onChange={event => setPower(event.target.value)}/>
-                </>
-                : "P"}
-            <button
-                onClick={() => setMultipliedMatrix(mode === "matrixMultiplikation" ? option === "^" ? matrixPower(data, power) : matrixSum(data, power) : createProbabilityMatrix(data))}>=
-            </button>
+            <p>
+                <DropDown options={["matrixMultiplikation", "randomSurfer"]} callback={setMode} />&thinsp;
+                {mode === "matrixMultiplikation" ?
+                    <>
+                        <DropDown options={["^", "<="]} callback={setOption}/>
+                        <input size="2" type="number" value={power} min={0} max={99}
+                               onChange={event => setPower(event.target.value)} style={inputStyle}/>
+                    </>
+                    : "P"}
+                <button
+                    onClick={() => setMultipliedMatrix(mode === "matrixMultiplikation" ? option === "^" ? matrixPower(data, power) : matrixSum(data, power) : createProbabilityMatrix(data))}>=
+                </button>
+            </p>
             <Matrix editable={false} data={multipliedMatrix} setData={setMultipliedMatrix}/>
             {mode === "randomSurfer" ? <>
                     Q
