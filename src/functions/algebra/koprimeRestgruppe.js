@@ -1,5 +1,3 @@
-import {fact} from "../combinatorics/allInOne";
-
 function gcd(a, b) {
     while(a !== b) {
         if(a > b) {
