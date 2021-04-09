@@ -5,17 +5,19 @@ import Algebra from "./components/algebra";
 import Combinatorics from "./components/combinatorics";
 import Graphs from "./components/graphs";
 import Logic from "./components/logic";
+import Symbols from "./components/symbols";
 
 function App() {
     return (
         <div className="App"
-             style={{display: "flex", flexDirection: "column", height: "100%", width: "100%", minHeight: "100vh"}}>
-            <Header/>
-            <Algebra/>
-            <Graphs/>
-            <Combinatorics/>
-            <Logic/>
-            <Footer/>
+            style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", minHeight: "100vh" }}>
+            <Header />
+            <Algebra />
+            <Graphs />
+            <Combinatorics />
+            <Logic />
+            <Symbols />
+            <Footer />
         </div>
     );
 }
