@@ -1,3 +1,5 @@
+const bigInt = require("big-integer")
+
 function gcd(a, b) {
     while(a !== b) {
         if(a > b) {
@@ -70,6 +72,18 @@ export function calcElemGroups(group, n) {
         result[i] = calcElemGroup(group[i], n);
     }
     return result;
+}
+
+export function calcGroupExponent(group, n) {
+    if(group == null) return NaN;
+    outer:
+    for (let i = 1; i < 1000; i++) {
+        for (let j = 0; j <group.length; j++) {
+            if(bigInt(group[j]).pow(i).mod(n).toJSNumber() !== 1) continue outer;
+        }
+        return i;
+    }
+    return NaN;
 }
 
 export function isCyclic(n, factors) {
