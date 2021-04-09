@@ -8,53 +8,78 @@ export function parseInput(input) {
     return (sections)
 }
 
-//BIG TODO negated values are not getting removed
-let log = []
+function toString(array) {
+    let arrayCopy = JSON.parse(JSON.stringify(array));
+    let output = "{"
+    for (let i = 0; i < arrayCopy.length; i++) {
+        output += "{" + arrayCopy[i] + "},"
+    }
 
-export function dpll(array) {
+    return output.length === 1 ? output + "}" : output.slice(0, -1) + "}"
+
+}
+
+//BIG TODO negated values are not getting removed
+//  let logArray = []
+
+export function dpll(array, logArray) {
+    // console.log(logArray)
+    // console.log([])
     if (array.length === 0) {
-        console.log("startyay")
+        logArray.push("erfuellbar")
+        // console.log("startyay")
         return true
     }
     let i = 0
     while (rulePossible(array).rule && i < 50) {
         let rp = rulePossible(array)
-        console.log({...rp})
+        // console.log({...rp})
 
         if (rp.olr.length > 0) {
             if (rp.olr[0].includes("-")) {
                 if (rp.olr.includes(rp.olr.slice(1))) {
-                    console.log("nope")
-                    return false
+                    // console.log("nope")
+                    logArray.push("Nicht erfuellbar: " + rp.olr + " negativ und positiv")
+                    return {res: false, log: logArray}
                 }
             } else if (rp.olr.includes("-" + rp.olr[0])) {
-                console.log("nope")
-                return false
+                // console.log("nope")
+                logArray.push("Nicht erfuellbar: " + rp.olr + " negativ und positiv")
+
+                return {res: false, log: logArray}
             } else {
-                console.log("OLR used: " + rp.olr[0])
-                eliminate(array, rp.olr[0], log)
+                logArray.push("OLR: " + rp.olr[0] + (rp.olr[0].includes("-") ? ": false" : ": true"))
+                // console.log("OLR used: " + rp.olr[0] + rp.olr[0].includes("-") ? ": false" : ": true")
+                eliminate(array, rp.olr[0], logArray)
+                logArray.push("↓")
+                logArray.push(toString(array))
 
             }
 
         } else if (rp.plr.length > 0) {
-            console.log("PLR used: " + rp.plr[0])
-            eliminate(array, rp.plr[0], log)
+            logArray.push("PLR: " + rp.plr[0] + (rp.plr[0].includes("-") ? ": false" : ": true"))
+            // console.log("PLR used: " + rp.plr[0] + rp.plr[0].includes("-") ? ": false" : ": true")
+            eliminate(array, rp.plr[0], logArray)
+            logArray.push("↓")
+            logArray.push(toString(array))
+
         }
         i++
     }
 
     if (array.length === 0) {
-        console.log("yayay")
-        return true
+        logArray.push("erfuellbar")
+        // console.log("yayay")
+        return {res: true, log: logArray}
     }
     let remaining = getAllLiterals(array)
-    // console.log("remaining" + remaining)
-    if (dpll(eliminate(array, remaining[0]))) {
-        console.log("true")
-        return true
+    // console.logArray("remaining" + remaining)
+    if (dpll(eliminate(array, remaining[0]), logArray).res) {
+        // console.log("true")
+        return {res: true, log: logArray}
     } else {
-        console.log("trying with false")
-        return dpll(eliminate(array, "-" + remaining[0]))
+        // console.log("trying with false")
+        return dpll(eliminate(array, "-" + remaining[0]), logArray)
     }
 
 }
@@ -77,17 +102,18 @@ function eliminate(array, variable, log) {
         for (let i = 0; i < array.length; i++) {
             if (array[i].includes(variable)) {
                 // log.push(array[i] + " eliminated")
-                console.log("{" + array[i] + "} eliminated")
+                // console.log("{" + array[i] + "} eliminated")
+                log.push("{" + array[i] + "} entfernt")
                 array.splice(i, 1)
                 i = 0
                 // console.log("now " + [...array])
-                continue
-            }
-            if (array[i].includes(variable.slice(1))) {
+
+            } else if (array[i].includes(variable.slice(1))) {
                 // log.push(variable + " eliminated from" + array[i])
-                console.log(variable + " eliminated from {" + [...array[i]] + "}")
+                // console.log(variable + " eliminated from {" + [...array[i]] + "}")
+                log.push(variable + " entfernt aus {" + [...array[i]] + "}")
                 array[i].splice(array[i].indexOf(variable.slice(1)), 1)
-                console.log("now " + [...array[i]])
+                // console.log("now " + [...array[i]])
                 if (array[i].length === 0) {
                     array.splice(i, 1)
                 }
@@ -98,17 +124,18 @@ function eliminate(array, variable, log) {
         for (let i = 0; i < array.length; i++) {
             if (array[i].includes(variable)) {
                 // log.push(array[i] + " eliminated")
-                console.log("{" + array[i] + "} eliminated")
+                // console.log("{" + array[i] + "} eliminated")
+                log.push("{" + array[i] + "} entfernt")
                 array.splice(i, 1)
                 i = 0
                 // console.log("now " + [...array])
-                continue
-            }
-            if (array[i].includes("-" + variable)) {
+
+            } else if (array[i].includes("-" + variable)) {
                 // log.push(variable + " eliminated from" + array[i])
-                console.log("-" + variable + " eliminated from {" + [...array[i]] + "}")
+                // console.log("-" + variable + " eliminated from {" + [...array[i]] + "}")
+                log.push("-" + variable + " entfernt aus {" + [...array[i]] + "}")
                 array[i].splice(array[i].indexOf("-" + variable), 1)
-                console.log("now " + [...array[i]])
+                // console.log("now " + [...array[i]])
 
                 if (array[i].length === 0) {
                     array.splice(i, 1)
@@ -174,5 +201,5 @@ function compareLiterals(a, b) {
     const tmpB = b.includes("-") ? b.slice(1) : b
     // console.log(tmpA,tmpB)
     // return tmpA < tmpB ? -1 : (tmpA > tmpB ? 1 : 0)
-    return tmpA.localeCompare(b)
+    return tmpA.localeCompare(tmpB)
 }
