@@ -41,9 +41,7 @@ export default function KoprimeRestgruppe(props) {
                 )
                 : ""
             }
-            <br />
             </ul>
-            λ=kgV{"{"+printArrayWithSep(elemGroupsOrd, ",")+"}="+lcmm(elemGroupsOrd)}
             <br />
             zyklisch ⇔ n∈&#123;2,4,pʳ,2pʳ|p∈ℙ∖&#123;2&#125;,r∈ℕ&#125;: {isCyclic(n, factors) ? "✅" : "❌"}
         </Card>
