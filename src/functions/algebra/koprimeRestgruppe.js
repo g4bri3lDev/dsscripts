@@ -56,7 +56,8 @@ export function calcGroup(n) {
 function calcElemGroup(a,n) {
     let result = [];
     for(let i=1; i<=n; i++) {
-        let x = Math.pow(a, i)%n;
+        let x = (result.length > 0 ? a * result[i-2] : a * a) % n;
+        //let x = Math.pow(a, i)%n;
         result.push(x)
         if(x === 1) break;
     }
