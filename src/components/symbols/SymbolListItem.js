@@ -6,7 +6,7 @@ export default function SymbolListItem({ name, symbol }) {
             <p style={pStyle}>
                 {name}
             </p>
-            <p style={pStyle}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p style={{ ...pStyle, ...{ userSelect: "none" } }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <p style={{ ...pStyle, ...{ fontSize: "1.5rem" } }}>
                 {symbol}
             </p>

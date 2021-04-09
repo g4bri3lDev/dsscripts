@@ -2,22 +2,22 @@ import Card from "../Card";
 import SymbolListItem from "./SymbolListItem";
 
 const symbols = [
-    ["UND", "∧"],
-    ["ODER", "∨"],
-    ["Nicht", "¬"],
-    ["Tilde", "~"],
-    ["XOR / Exklusives Oder", "⊕"],
-    ["Implikation", "→ / ⇒"],
-    ["Genau dann wenn (gdw) / Doppelte Implikation", "↔ / ⇔"],
-    ["Für alle", "∀"],
-    ["Es existiert", "∃"],
-    ["Es existiert nicht", "∄"],
+    ["Ungleich", "≠"],
+    ["Kleiner", "≤"],
+    ["Größer", "≥"],
+    ["Entspricht", "≙"],
+    ["Zu Beweisen", "≟"],
+    ["Natürliche Zahlen", "ℕ"],
+    ["Ganze Zahlen", "ℤ"],
+    ["Rationale Zahlen", "ℚ"],
+    ["Reelle Zahlen", "ℝ"],
+    ["Komplexe Zahlen", "ℂ"]
 ];
 
-export default function Logik() {
+export default function Allgemein() {
 
     return (
-        <Card title={"Logik"}>
+        <Card title={"Allgemein"}>
             <ul style={{ textAlign: "left", width: "100%", padding: "0" }}>
                 {symbols.map((element, index) =>
                     <SymbolListItem key={index} name={element[0]} symbol={element[1]} />
