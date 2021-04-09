@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {printPhiFormula} from "../../functions/algebra/phi";
-import {primeFactors, calcGroup, calcElemGroups, isCyclic} from "../../functions/algebra/koprimeRestgruppe";
+import {calcGroupExponent, primeFactors, calcGroup, calcElemGroups, isCyclic} from "../../functions/algebra/koprimeRestgruppe";
 import {printPrimeFactors, printArrayWithSep} from "../../functions/utils";
 import Card from "../Card";
 import {inputStyle} from "../../styles";
@@ -9,7 +9,6 @@ export default function KoprimeRestgruppe(props) {
     const [factors, setFactors] = useState(null)
     const [group, setGroup] = useState(null)
     const [elemGroups, setElemGroups] = useState([]);
-    //const [elemGroupsOrd, setElemGroupsOrd] = useState([]);
     const [n, setN] = useState("")
 
     useEffect(() => {
@@ -18,7 +17,6 @@ export default function KoprimeRestgruppe(props) {
         setGroup(g);
         let eg = calcElemGroups(g, n);
         setElemGroups(eg)
-        //setElemGroupsOrd(eg.map((elemGroup) => elemGroup.length));
     }, [n]);
 
     return (
@@ -41,7 +39,9 @@ export default function KoprimeRestgruppe(props) {
                 )
                 : ""
             }
+            <br />
             </ul>
+            λ=&#123;min λ∈ℕ|∀a∈𝔾:a^λ=1&#125;={calcGroupExponent(group, n)}
             <br />
             zyklisch ⇔ n∈&#123;2,4,pʳ,2pʳ|p∈ℙ∖&#123;2&#125;,r∈ℕ&#125;: {isCyclic(n, factors) ? "✅" : "❌"}
         </Card>
