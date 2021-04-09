@@ -9,17 +9,14 @@ const symbols = [
     ["Kein Element von", "∉"],
     ["Symmetrische Differenz", "∆"],
     ["Differenz / Ohne", "∖"],
+    ["Universum", "Ω"],
     ["Teilmenge", "⊆"],
     ["Echte Teilmenge", "⊂"],
     ["Keine Teilmenge", "⊄"],
     ["Kartesisches Produkt", "×"],
+    ["Disjunkte Vereinigung", "⊎"],
     ["Alphabet", "Σ"],
     ["Leeres Wort", "ε"],
-    ["Natürliche Zahlen", "ℕ"],
-    ["Ganze Zahlen", "ℤ"],
-    ["Rationale Zahlen", "ℚ"],
-    ["Reelle Zahlen", "ℝ"],
-    ["Komplexe Zahlen", "ℂ"]
 ];
 
 export default function Mengen() {
