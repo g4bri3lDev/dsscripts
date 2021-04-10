@@ -12,6 +12,7 @@ const symbols = [
     ["Für alle", "∀"],
     ["Es existiert", "∃"],
     ["Es existiert nicht", "∄"],
+    ["Es existiert genau ein", "∃!"],
 ];
 
 export default function Logik() {
